@@ -1,5 +1,14 @@
 # 编译器设置
-CC = gcc
+# CC = gcc  # 注释掉本机编译
+# CC = arm-linux-gnueabihf-gcc  # 启用交叉编译
+# 新增：默认本机编译，可通过make CROSS=1启用交叉编译
+ifeq ($(CROSS),1)
+    CC = arm-linux-gnueabihf-gcc  # 通用交叉链
+    # CC = arm-rockchip-linux-gnueabihf-gcc  # 原厂交叉链
+else
+    CC = gcc  # 本机编译
+endif
+
 CFLAGS = -Iinclude  # 指定头文件搜索路径
 LDFLAGS = -Llib -lm  # 库文件路径与链接库
 

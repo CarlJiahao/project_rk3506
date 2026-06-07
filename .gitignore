@@ -1,0 +1,39 @@
+# ============================================================
+# .gitignore — 过滤编译产物和编辑器临时文件
+# ============================================================
+
+# 编译产物
+build/
+*.o
+*.ko
+*.mod
+*.mod.c
+*.mod.o
+*.symvers
+*.order
+*.elf
+*.bin
+*.img
+
+# 内核模块产物
+Module.symvers
+modules.order
+
+# 测试程序
+test/test_hello
+
+# 编辑器
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# 压缩包
+*.tar.gz
+*.tar.xz
+*.zip
+
+# 临时文件
+*.bak
+*.tmp

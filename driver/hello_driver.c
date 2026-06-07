@@ -105,6 +105,7 @@ static ssize_t hello_write(struct file *file, const char __user *buf,
         return -EFAULT;
 
     kernel_buffer[write_len] = '\0';  /* 确保字符串终止 */
+    *offset = 0;                       /* 写完后重置偏移，下次读从头开始 */
     printk(KERN_INFO "[hello_driver] write: 写入 %zu 字节: \"%s\"\n",
            write_len, kernel_buffer);
     return write_len;

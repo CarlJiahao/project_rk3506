@@ -1,0 +1,6 @@
+#!/bin/sh
+mount -t proc none /proc
+mount -t sysfs none /sys
+mount -t devtmpfs none /dev
+echo "QEMU ARM Linux ready!"
+setsid sh -c "exec sh </dev/ttyAMA0 >/dev/ttyAMA0 2>&1"

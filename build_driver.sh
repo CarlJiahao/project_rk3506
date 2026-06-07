@@ -68,7 +68,7 @@ build_test() {
 
     cd test
     if [ "$mode" == "cross" ]; then
-        ${CROSS_COMPILER}gcc -o test_hello test_hello.c
+        ${CROSS_COMPILER}gcc -static -o test_hello test_hello.c
     else
         gcc -o test_hello test_hello.c
     fi

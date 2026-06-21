@@ -11,8 +11,8 @@
 #   交叉编译需要指定 KERNEL_SRC（已编译过的内核源码树）
 # ============================================================
 
-# --- 模块名（必须和 .c 文件名一致！） ---
-obj-m := hello_driver.o
+# --- 模块名列表（多个模块用空格分隔） ---
+obj-m := hello_driver.o gpio_led.o gpio_led_dt.o button_irq.o
 
 # --- 检测交叉编译 ---
 ifeq ($(CROSS),1)
@@ -26,6 +26,9 @@ else
     # 本机编译：使用当前运行的内核
     KERNEL_SRC ?= $(firstword $(wildcard /lib/modules/*/build))
 endif
+
+# --- 关闭栈保护（板子内核没开 CONFIG_STACKPROTECTOR） ---
+ccflags-y := -fno-stack-protector
 
 # --- 编译目标 ---
 all:

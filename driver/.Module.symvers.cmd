@@ -1,0 +1,1 @@
+cmd_/mnt/e/wsl_all_projects/rk3506_embed/project_rk3506/driver/Module.symvers :=  sed 's/ko$$/o/'  /mnt/e/wsl_all_projects/rk3506_embed/project_rk3506/driver/modules.order | scripts/mod/modpost       -o /mnt/e/wsl_all_projects/rk3506_embed/project_rk3506/driver/Module.symvers -e -i Module.symvers -T - 

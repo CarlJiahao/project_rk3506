@@ -1,0 +1,1 @@
+cmd_/mnt/e/wsl_all_projects/rk3506_embed/project_rk3506/driver/hello_driver.mod := printf '%s\n'   hello_driver.o | awk '!x[$$0]++ { print("/mnt/e/wsl_all_projects/rk3506_embed/project_rk3506/driver/"$$0) }' > /mnt/e/wsl_all_projects/rk3506_embed/project_rk3506/driver/hello_driver.mod

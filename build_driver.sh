@@ -15,7 +15,13 @@ set -e
 
 # --- 交叉编译配置 ---
 CROSS_COMPILER=arm-linux-gnueabihf-
-KERNEL_SRC_RK3506=~/rk3506_official   # RK3506 内核源码路径（经 make defconfig 配置过）
+KERNEL_SRC_RK3506=/mnt/e/wsl_all_projects/rk3506_embed/rk3506_official  # RK3506 内核源码路径（经 make defconfig 配置过）（弃用）
+
+# # 获取当前脚本所在目录
+# SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+# # 内核源码目录：当前脚本上级目录的 rk3506_official
+# KERNEL_SRC_RK3506="${SCRIPT_DIR}/../rk3506_official"
+
 
 # 自动查找内核构建目录（兼容 WSL2：运行内核 vs 头文件版本可能不同）
 KERNEL_SRC_DEFAULT=$(ls -d /lib/modules/*/build 2>/dev/null | head -1)

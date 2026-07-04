@@ -1,0 +1,1 @@
+cmd_/mnt/e/wsl_all_projects/rk3506_embed/project_rk3506/driver/gpio_led_dt.mod := printf '%s\n'   gpio_led_dt.o | awk '!x[$$0]++ { print("/mnt/e/wsl_all_projects/rk3506_embed/project_rk3506/driver/"$$0) }' > /mnt/e/wsl_all_projects/rk3506_embed/project_rk3506/driver/gpio_led_dt.mod
